@@ -1,0 +1,14 @@
+*.iml
+.gradle
+/local.properties
+.idea/
+.DS_Store
+/build
+/buildSrc/build
+/captures
+.externalNativeBuild
+.cxx
+signingKeyStore.properties
+database-debug.log
+firebase-debug.log
+ui-debug.log

@@ -1,0 +1,96 @@
+import static de.fayard.refreshVersions.core.Versions.versionFor
+
+plugins {
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+    id("com.google.devtools.ksp")
+    id("com.getkeepsafe.dexcount")
+    id("org.jmailen.kotlinter")
+    id("de.mannodermaus.android-junit5")
+    id("com.squareup.sqldelight")
+    id("kotlin-parcelize")
+}
+
+apply from: "../config-kotlin-sources.gradle"
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.example.composeapplicationtemplate"
+        minSdk 23
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+    }
+
+    applicationVariants.all { variant ->
+        variant.sourceSets.java.each {
+            it.srcDirs += "build/generated/ksp/${variant.name}/kotlin"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_11.toString()
+
+        freeCompilerArgs += "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
+        freeCompilerArgs += "-Xopt-in=kotlinx.coroutines.FlowPreview"
+        freeCompilerArgs += "-Xopt-in=kotlin.Experimental"
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion versionFor(AndroidX.Compose.Ui)
+    }
+    packagingOptions {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
+
+    ["lintKotlinDebug", "lintKotlinMain", "formatKotlinDebug", "formatKotlinMain"].each {
+        tasks.named(it) {
+            source -= fileTree("$buildDir/generated")
+        }
+    }
+}
+
+dependencies {
+    implementation(Libraries.kotlinResult)
+
+    implementation(Libraries.AndroidX)
+    implementation(Libraries.Compose)
+    implementation(Libraries.Networking)
+    implementation(Libraries.SqlDelight)
+
+    implementation(Libraries.Voyager)
+    implementation(Libraries.Koin)
+
+    implementation(Libraries.systemUiController)
+    implementation(Libraries.logcat)
+
+    ksp(Libraries.Annotations)
+
+    compileOnly(Libraries.hyperionPlugin)
+    debugImplementation(Libraries.Debug)
+    releaseImplementation(Libraries.Release)
+
+    testImplementation(Libraries.Test)
+}
