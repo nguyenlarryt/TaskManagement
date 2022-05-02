@@ -23,6 +23,7 @@ object Libraries {
     const val composeActivity = "androidx.activity:activity-compose:_"
     const val composeFoundation = "androidx.compose.foundation:foundation:_"
     const val composeMaterial = "androidx.compose.material:material:_"
+    const val composeIcons = "androidx.compose.material:material-icons-extended:_"
     const val composeCoil = "com.github.skydoves:landscapist-coil:_"
     const val composeTooling = "androidx.compose.ui:ui-tooling:_"
     const val composeToolingPreview = "androidx.compose.ui:ui-tooling-preview:_"
@@ -78,7 +79,7 @@ object Libraries {
     val Voyager = setOf(voyagerCore, voyagerAndroid, voyagerTabNavigation, voyagerTransitions)
     val Compose = setOf(
         composeUi, composeTooling, composeToolingPreview, composeFoundation, composeMaterial,
-        composePlaceholder, composeActivity, composeCoil
+        composeIcons, composePlaceholder, composeActivity, composeCoil
     )
     val Networking = setOf(retrofitCore, retrofitConverterMoshi, moshiCore, store)
     val Maps = setOf(mapsCore, mapsKtx, mapsCompose)

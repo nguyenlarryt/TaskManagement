@@ -9,6 +9,7 @@ plugins {
     id("de.mannodermaus.android-junit5")
     id("com.squareup.sqldelight")
     id("kotlin-parcelize")
+    id("kotlinx-serialization")
 }
 
 apply from: "../config-kotlin-sources.gradle"
@@ -73,8 +74,8 @@ android {
 }
 
 dependencies {
-    implementation(Libraries.kotlinResult)
-    implementation "androidx.compose.material:material-icons-extended:_"
+    implementation(Libraries.Kotlin)
+    implementation(Libraries.Coroutines)
 
     implementation(Libraries.AndroidX)
     implementation(Libraries.Compose)

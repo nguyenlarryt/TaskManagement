@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Task Management</string>
+    <string name="task_details_title">Task Details</string>
 </resources>

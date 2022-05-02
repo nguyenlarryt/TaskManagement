@@ -18,7 +18,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -31,7 +30,7 @@ fun TaskFilterMenu(onFilterSelected: (TaskFilter) -> Unit) {
     val filtersList = listOf(TaskFilter.ALL, TaskFilter.ACTIVE, TaskFilter.COMPLETE)
     var selectedFilter by remember { mutableStateOf(TaskFilter.ALL) }
 
-    Box(modifier = Modifier.wrapContentSize(Alignment.TopEnd)) {
+    Box(modifier = Modifier.wrapContentSize()) {
         IconButton(onClick = { expanded = !expanded }) {
             Icon(Icons.Filled.FilterList, null)
         }
