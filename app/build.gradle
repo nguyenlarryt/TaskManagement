@@ -17,7 +17,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.example.composeapplicationtemplate"
+        applicationId "com.arynlyre.taskmanagement"
         minSdk 23
         targetSdk 31
         versionCode 1
@@ -74,6 +74,7 @@ android {
 
 dependencies {
     implementation(Libraries.kotlinResult)
+    implementation "androidx.compose.material:material-icons-extended:_"
 
     implementation(Libraries.AndroidX)
     implementation(Libraries.Compose)

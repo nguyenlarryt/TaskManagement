@@ -1,4 +1,4 @@
-package com.arynlyre.mvvmcomposetemplate
+package com.arynlyre.taskmanagement
 
 import io.kotest.matchers.shouldBe
 import org.junit.jupiter.api.Test

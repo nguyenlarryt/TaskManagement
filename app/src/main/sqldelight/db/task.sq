@@ -1,0 +1,32 @@
+CREATE TABLE task (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    desc TEXT NOT NULL,
+    isCompleted INTEGER AS Boolean DEFAULT 0 NOT NULL
+);
+
+selectAll:
+SELECT *
+FROM task;
+
+selectById:
+SELECT * FROM task
+WHERE id = ?;
+
+addNewTask:
+INSERT OR REPLACE INTO task(title, desc, isCompleted)
+VALUES (?, ?, ?);
+
+updateTask:
+UPDATE task
+SET title = ?,
+    desc = ?,
+    isCompleted = ?
+WHERE id = ?;
+
+delete:
+DELETE FROM task
+WHERE id = ?;
+
+deleteAll:
+DELETE FROM task;

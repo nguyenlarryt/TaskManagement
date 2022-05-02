@@ -1,4 +1,4 @@
-package com.arynlyre.mvvmcomposetemplate.ui.theme
+package com.arynlyre.taskmanagement.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes
