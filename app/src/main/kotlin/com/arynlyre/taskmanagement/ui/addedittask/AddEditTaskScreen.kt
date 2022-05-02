@@ -51,7 +51,7 @@ data class AddEditTaskScreen(val task: Task? = null) : AndroidScreen() {
                     title = { Text(if (task == null) "Add Task" else "Edit Task") },
                     navigationIcon = {
                         IconButton(onClick = { navigator.pop() }) {
-                            Icon(Icons.Filled.ArrowBack, null, tint = Color.White)
+                            Icon(Icons.Filled.ArrowBack, null)
                         }
                     }
                 )
@@ -63,7 +63,7 @@ data class AddEditTaskScreen(val task: Task? = null) : AndroidScreen() {
                         navigator.pop()
                     }
                 ) {
-                    Icon(if (task == null) Icons.Filled.Add else Icons.Filled.Check, null)
+                    Icon(if (task == null) Icons.Filled.Add else Icons.Filled.Check, null, tint = Color.White)
                 }
             }
         ) {
