@@ -1,5 +1,5 @@
 object Libraries {
-    const val KOIN_ANNOTATIONS_VERSION = "1.0.0-beta-2"
+    const val KOIN_ANNOTATIONS_VERSION = "1.0.1"
 
     const val kotlinReflect = "org.jetbrains.kotlin:kotlin-reflect:_"
     const val kotlinSerialize = "org.jetbrains.kotlinx:kotlinx-serialization-json:_"
