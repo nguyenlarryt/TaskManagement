@@ -1,0 +1,6 @@
+workflows:
+  test:
+    envs:
+      - opts:
+          is_expand: false
+        MONTHLY_BUILD_NUMBER: '1'
