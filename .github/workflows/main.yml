@@ -17,4 +17,4 @@ jobs:
           python-version: '3.7.7'
 
       - name: Execute Python script
-          run: python ./scripts/incVer.py
+        run: python ./scripts/incVer.py
