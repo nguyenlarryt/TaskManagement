@@ -1,5 +1,5 @@
 import sys
-import yaml
+import ruamel.yaml
 
 print("Writing to yml...")
 with open("build-config.yml") as f:
