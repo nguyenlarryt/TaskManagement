@@ -1,3 +1,4 @@
+import sys
 import yaml
 
 print("Writing to yml...")
